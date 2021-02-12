@@ -9,12 +9,12 @@ console.log(date)
 
 let hr = date.getHours()
 let min = date.getMinutes()
-let seC = date.getSeconds()
+let sec = date.getSeconds()
 console.log(`Hora: ${hr} Minuto ${min} Segundo: ${sec}`)
 
-let posicaoHr = (hr * 360 / 12) + (min * (360 / 60) / 12)
-let posicaoMin = (min * 360 / 60) + (sec * (360 / 60) / 60)
-let posicaoSeg = sec * 360 / 60
+let positionHr = (hr * 360 / 12) + (min * (360 / 60) / 12)
+let positionMin = (min * 360 / 60) + (sec * (360 / 60) / 60)
+let positionSec = sec * 360 / 60
 
 function runClock() {
 
@@ -22,9 +22,8 @@ function runClock() {
     positionMin = positionMin + (6/60)   //A cada 60segundos, 1 minuto = 6 graus = 1 posição // (1/60)*6 = 6/60
     positionSec = positionSec + 6        //A cada segundo, 6 graus = 1 posição
 
-    HOURPOINTE.style.transform = "rotate(" + posicaoHr + "deg)"
-    MINUTEPOINTER.style.transform = "rotate(" + posicaoMin + "deg)"
-    SECONDPOINTER.style.transform = "rotate(" + posicaoSec + "deg)"
+    HOURPOINTER.style.transform = "rotate(" + positionHr + "deg)"
+    MINUTEPOINTER.style.transform = "rotate(" + positionMin + "deg)"
+    SECONDPOINTER.style.transform = "rotate(" + positionSec + "deg)"
 }
-
 var interval = setInterval(runClock, 1000)
